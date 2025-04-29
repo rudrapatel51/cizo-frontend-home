@@ -132,7 +132,7 @@ const Partners: React.FC = () => {
             {partners.map((partner) => (
               <div
                 key={partner.id}
-                className={`${partner.width} h-20 flex-shrink-0 mx-4 transform transition-all duration-300 hover:scale-110`}
+                className={`h-20 flex-shrink-0 transform transition-all duration-300 hover:scale-110 flex justify-center items-center`}
                 style={{
                   flex: `0 0 calc(100% / ${totalSlidesVisible()})`,
                 }}

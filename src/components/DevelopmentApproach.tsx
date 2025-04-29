@@ -1,68 +1,85 @@
-import { Code, PenTool, BarChart, MessageSquare, Zap, Database } from "lucide-react"
+import React from 'react';
+import SectionTitle from '../sections/SectionTitle';
 
-const approaches = [
-  {
-    icon: <Code className="h-8 w-8 text-white" />,
-    color: "bg-purple-600",
-    title: "Software Engineering",
-    description: "We build scalable, maintainable software using modern engineering practices and technologies.",
-  },
-  {
-    icon: <PenTool className="h-8 w-8 text-white" />,
-    color: "bg-blue-500",
-    title: "Product Design Fundamentals",
-    description: "Our design process focuses on creating intuitive, user-friendly interfaces that solve real problems.",
-  },
-  {
-    icon: <BarChart className="h-8 w-8 text-white" />,
-    color: "bg-pink-500",
-    title: "Agile Development Process",
-    description: "We follow agile methodologies to deliver value quickly and adapt to changing requirements.",
-  },
-  {
-    icon: <MessageSquare className="h-8 w-8 text-white" />,
-    color: "bg-green-500",
-    title: "Continuous Integration/Delivery",
-    description: "Our CI/CD pipeline ensures that code is tested and deployed efficiently and reliably.",
-  },
-  {
-    icon: <Zap className="h-8 w-8 text-white" />,
-    color: "bg-orange-500",
-    title: "Quality Assurance Testing",
-    description: "We rigorously test our software to ensure it meets the highest standards of quality and reliability.",
-  },
-  {
-    icon: <Database className="h-8 w-8 text-white" />,
-    color: "bg-teal-500",
-    title: "Scalable Infrastructure Planning",
-    description: "We design infrastructure that can scale with your business and handle increasing loads.",
-  },
-]
+interface ApproachCard {
+  id: number;
+  title: string;
+  description: string;
+  icon: string;
+  iconBg?: string;
+}
 
-const DevelopmentApproach = () => {
+const DevelopmentApproach: React.FC = () => {
+  const approaches: ApproachCard[] = [
+    {
+      id: 1,
+      title: "UX Driven Engineering",
+      description: "Unlike other companies, we are a UX first development company. Projects are driven by designers and they make sure design and experiences translate to code.",
+      icon: "https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-04-29/524f54f0-782f-4288-9345-eeb0c474c618.png"
+    },
+    {
+      id: 2,
+      title: "Developing Shared Understanding",
+      description: "Unlike other companies, we are a UX first development company. Projects are driven by designers and they make sure design and experiences translate to code.",
+      icon: "https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-04-29/3fc8b3bd-afda-4bd7-9de0-35654cea43d2.png"
+    },
+    {
+      id: 3,
+      title: "Proven Experience and Expertise",
+      description: "Unlike other companies, we are a UX first development company. Projects are driven by designers and they make sure design and experiences translate to code.",
+      icon: "https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-04-29/e807db8d-070d-4375-af14-66a06ed6c7f8.png"
+    },
+    {
+      id: 4,
+      title: "Security & Intellectual Property (IP)",
+      description: "Unlike other companies, we are a UX first development company. Projects are driven by designers and they make sure design and experiences translate to code.",
+      icon: "https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-04-29/abbba058-0678-478d-9fec-c103f77185ca.png"
+    },
+    {
+      id: 5,
+      title: "Code Reviews",
+      description: "Unlike other companies, we are a UX first development company. Projects are driven by designers and they make sure design and experiences translate to code.",
+      icon: "https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-04-29/59977c6a-a344-4c19-8aa1-35ae2a85cd18.png"
+    },
+    {
+      id: 6,
+      title: "Quality Assurance & Testing",
+      description: "Unlike other companies, we are a UX first development company. Projects are driven by designers and they make sure design and experiences translate to code.",
+      icon: "https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-04-29/d369cc2c-3c5a-451a-9ffc-169813e7af85.png"
+    }
+  ];
+
   return (
     <section className="py-16 bg-gray-50">
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-bold text-center mb-12">
-          Our design and
-          <br />
-          development approach
-        </h2>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {approaches.map((approach, index) => (
-            <div key={index} className="bg-white p-6 rounded-lg shadow-sm">
-              <div className={`${approach.color} h-12 w-12 rounded-lg flex items-center justify-center mb-4`}>
-                {approach.icon}
+        <SectionTitle 
+          title={<>Our design and<br />development approach</>} 
+          centered 
+        />
+        
+        <div className="mt-16 grid grid-cols-1 md:grid-cols-2 gap-6">
+          {approaches.map((approach) => (
+            <div key={approach.id} className="bg-white border border-purple-100 rounded-lg p-6 flex">
+              <div className="mr-6 mt-2">
+                <div className="w-14 h-14 rounded-lg bg-gray-100 flex items-center justify-center">
+                  <img 
+                    src={approach.icon} 
+                    alt={approach.title} 
+                    className="w-8 h-8 object-contain"
+                  />
+                </div>
               </div>
-              <h3 className="text-xl font-semibold mb-3">{approach.title}</h3>
-              <p className="text-gray-600">{approach.description}</p>
+              
+              <div>
+                <h3 className="text-xl font-semibold text-gray-800 mb-3">{approach.title}</h3>
+                <p className="text-gray-600">{approach.description}</p>
+              </div>
             </div>
           ))}
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default DevelopmentApproach
+export default DevelopmentApproach;

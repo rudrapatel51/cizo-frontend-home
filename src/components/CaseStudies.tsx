@@ -1,77 +1,95 @@
-const caseStudies = [
-  {
-    title: "Website Design for SAAS Product",
-    description:
-      "A complete redesign of the user interface for a leading SaaS platform, focusing on improving user experience and conversion rates.",
-    images: [
-      "/placeholder.svg?height=400&width=200",
-      "/placeholder.svg?height=400&width=200",
-      "/placeholder.svg?height=400&width=200",
-    ],
-  },
-  {
-    title: "Website Design for SAAS Product",
-    description:
-      "Development of a mobile application for a fintech startup, enabling users to manage their finances on the go with a secure and intuitive interface.",
-    images: [
-      "/placeholder.svg?height=400&width=200",
-      "/placeholder.svg?height=400&width=200",
-      "/placeholder.svg?height=400&width=200",
-    ],
-  },
-  {
-    title: "Website Design for SAAS Product",
-    description:
-      "Creation of a comprehensive e-commerce solution for a retail brand, including product catalog, payment processing, and customer management.",
-    images: [
-      "/placeholder.svg?height=400&width=200",
-      "/placeholder.svg?height=400&width=200",
-      "/placeholder.svg?height=400&width=200",
-    ],
-  },
-]
+import React from 'react';
+import SectionTitle from '../sections/SectionTitle';
 
-const CaseStudies = () => {
+interface CaseStudy {
+  id: number;
+  title: string;
+  description: string;
+  image: string;
+  bgColor: string;
+}
+
+const CaseStudies: React.FC = () => {
+  const caseStudies: CaseStudy[] = [
+    {
+      id: 1,
+      title: "Website Design for SCFC Canada",
+      description: "Born out of a vision, a single-minded objective that puts service before anything else, Swift Clearance and Forwarding Corp. surging forth to deliver the best services in the shipping and logistics scenario. Its meteoric rise stems out of a solid foundation.",
+      image: "https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-04-29/18fac10c-e45a-492b-9840-d753da9f6fb7.png",
+      bgColor: "#f1f1ff"
+    },
+    {
+      id: 2,
+      title: "Website Design for SCFC Canada",
+      description: "Born out of a vision, a single-minded objective that puts service before anything else, Swift Clearance and Forwarding Corp. surging forth to deliver the best services in the shipping and logistics scenario. Its meteoric rise stems out of a solid foundation.",
+      image: "https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-04-29/71d1f438-3386-401a-81b2-0dd5de74a51e.png",
+      bgColor: "#f0fff7"
+    },
+    {
+      id: 3,
+      title: "Website Design for SCFC Canada",
+      description: "Born out of a vision, a single-minded objective that puts service before anything else, Swift Clearance and Forwarding Corp. surging forth to deliver the best services in the shipping and logistics scenario. Its meteoric rise stems out of a solid foundation.",
+      image: "https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-04-29/eeef1161-aa0d-4fa9-84e6-84b3c9d644b2.png",
+      bgColor: "#fff4f4"
+    }
+  ];
+
   return (
-    <section className="py-16 bg-gray-50">
+    <section id="case-studies" className="py-16">
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-bold text-center mb-12">
-          Our recent
-          <br />
-          Case studies
-        </h2>
-
-        <div className="space-y-16">
+        <div className="relative mb-16">
+          <div className="absolute top-0 right-0 w-48 h-64 bg-[url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-04-29/rJH9xuG13O.png)] bg-cover bg-no-repeat opacity-20 md:opacity-100"></div>
+          <div className="absolute top-0 left-0 w-48 h-48 bg-[url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-04-29/M5LdgPqxc4.png)] bg-cover bg-no-repeat opacity-20 md:opacity-100"></div>
+          
+          <div className="relative z-10 mt-16">
+            <SectionTitle 
+              title={<>Our recent<br />Case studies</>} 
+              centered 
+            />
+          </div>
+        </div>
+        
+        <div className="space-y-10">
           {caseStudies.map((study, index) => (
-            <div key={index} className="bg-white p-8 rounded-lg shadow-sm">
-              <div className="flex flex-col md:flex-row gap-8">
-                <div className="md:w-1/2">
-                  <h3 className="text-xl font-bold mb-4">{study.title}</h3>
-                  <p className="text-gray-600 mb-6">{study.description}</p>
-                  <button className="text-purple-600 font-semibold hover:text-purple-700 transition-colors">
-                    View case study →
+            <div key={study.id} className="flex flex-col md:flex-row rounded-lg overflow-hidden">
+              <div className="w-full md:w-1/2 h-64 md:h-auto">
+                <div 
+                  className="w-full h-full bg-cover bg-center rounded-t-lg md:rounded-l-lg md:rounded-tr-none"
+                  style={{ backgroundImage: `url(${study.image})` }}
+                ></div>
+              </div>
+              
+              <div 
+                className="w-full md:w-1/2 p-6 md:p-10 rounded-b-lg md:rounded-r-lg md:rounded-bl-none border border-purple-100"
+                style={{ backgroundColor: study.bgColor }}
+              >
+                <h3 className="text-2xl font-semibold text-gray-700 mb-6 text-center md:text-left">{study.title}</h3>
+                <p className="text-gray-600 mb-8">{study.description}</p>
+                
+                <div className="flex justify-start">
+                  <button className="flex items-center text-sm font-semibold">
+                    Read more
+                    <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                    </svg>
                   </button>
-                </div>
-                <div className="md:w-1/2">
-                  <div className="grid grid-cols-3 gap-4">
-                    {study.images.map((img, imgIndex) => (
-                      <div key={imgIndex} className="bg-purple-100 rounded-lg overflow-hidden">
-                        <img
-                          src={img || "/placeholder.svg"}
-                          alt={`Case study ${index + 1} screenshot ${imgIndex + 1}`}
-                          className="w-full h-auto"
-                        />
-                      </div>
-                    ))}
-                  </div>
                 </div>
               </div>
             </div>
           ))}
         </div>
+        
+        <div className="flex justify-end mt-10">
+          <a href="#" className="flex items-center text-xl font-semibold">
+            Read more case studies
+            <svg className="w-6 h-6 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+            </svg>
+          </a>
+        </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default CaseStudies
+export default CaseStudies;
