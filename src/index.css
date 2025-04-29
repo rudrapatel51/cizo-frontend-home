@@ -1,0 +1,10 @@
+@import "tailwindcss";
+
+body {
+  font-family: "Inter", sans-serif;
+  color: #333;
+}
+
+.inspiration-font {
+  font-family: 'Inspiration', cursive;
+}
