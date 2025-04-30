@@ -1,5 +1,7 @@
 import React from 'react';
 import SectionTitle from '../sections/SectionTitle';
+import { IoIosArrowForward } from "react-icons/io";
+
 
 interface CaseStudy {
   id: number;
@@ -35,58 +37,58 @@ const CaseStudies: React.FC = () => {
   ];
 
   return (
-    <section id="case-studies" className="py-16">
+    <section id="case-studies" className="py-16 bg-gray-100 relative">
+             {/* Right arrow - hidden on mobile, shown on md+ */}
+{/* Right arrow - moved more top */}
+<div className="absolute -top-24 right-30 w-48 h-64 bg-[url('/home/rightArrow.png')] bg-cover bg-no-repeat opacity-0 md:opacity-100 md:block hidden"></div>
+
+{/* Left arrow - moved more top */}
+<div className="absolute -top-24 left-30 w-48 h-48 bg-[url('/home/leftArrow.png')] bg-cover bg-no-repeat opacity-0 md:opacity-100 md:block hidden"></div>
+
       <div className="container mx-auto px-4">
-        <div className="relative mb-16">
-          <div className="absolute top-0 right-0 w-48 h-64 bg-[url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-04-29/rJH9xuG13O.png)] bg-cover bg-no-repeat opacity-20 md:opacity-100"></div>
-          <div className="absolute top-0 left-0 w-48 h-48 bg-[url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-04-29/M5LdgPqxc4.png)] bg-cover bg-no-repeat opacity-20 md:opacity-100"></div>
-          
+        <div className="mb-16">
           <div className="relative z-10 mt-16">
             <SectionTitle 
-              title={<>Our recent<br />Case studies</>} 
+              title={<><span className='font-normal'>Our recent</span><br />Case studies</>} 
               centered 
             />
           </div>
         </div>
         
-        <div className="space-y-10">
-          {caseStudies.map((study, index) => (
-            <div key={study.id} className="flex flex-col md:flex-row rounded-lg overflow-hidden">
+        <div className="space-y-10 px-4 md:px-16 ">
+          {caseStudies.map((study) => (
+            <div key={study.id} className="flex flex-col md:flex-row rounded-4xl overflow-hidden">
               <div className="w-full md:w-1/2 h-64 md:h-auto">
-                <div 
+               <img src={study.image}
                   className="w-full h-full bg-cover bg-center rounded-t-lg md:rounded-l-lg md:rounded-tr-none"
-                  style={{ backgroundImage: `url(${study.image})` }}
-                ></div>
-              </div>
+                  />
+               </div>
               
               <div 
-                className="w-full md:w-1/2 p-6 md:p-10 rounded-b-lg md:rounded-r-lg md:rounded-bl-none border border-purple-100"
+                className="w-full md:w-1/2 p-6 md:p-16 font-semibold rounded-b-lg md:rounded-r-lg md:rounded-bl-none border border-purple-100"
                 style={{ backgroundColor: study.bgColor }}
               >
-                <h3 className="text-2xl font-semibold text-gray-700 mb-6 text-center md:text-left">{study.title}</h3>
-                <p className="text-gray-600 mb-8">{study.description}</p>
+                <h3 className="text-3xl font-semibold text-gray-700 mb-6 text-center md:text-left">{study.title}</h3>
+                <p className="text-[#4A5568] mb-12 font-normal">{study.description}</p>
                 
-                <div className="flex justify-start">
-                  <button className="flex items-center text-sm font-semibold">
+                <div className="flex justify-end ">
+                  <button className="flex items-center text-lg gradient-text font-semibold gap-3">
                     Read more
-                    <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                    </svg>
+                    <IoIosArrowForward size={24} color='purple' />
                   </button>
                 </div>
               </div>
             </div>
           ))}
-        </div>
-        
-        <div className="flex justify-end mt-10">
-          <a href="#" className="flex items-center text-xl font-semibold">
+          <div className="flex justify-end mt-10">
+          <a href="#" className="flex items-center text-xl gradient-text gap-4 font-semibold">
             Read more case studies
-            <svg className="w-6 h-6 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-            </svg>
+            <IoIosArrowForward size={24} color='purple' />
           </a>
         </div>
+        </div>
+        
+        
       </div>
     </section>
   );

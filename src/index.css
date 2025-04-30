@@ -8,3 +8,15 @@ body {
 .inspiration-font {
   font-family: 'Inspiration', cursive;
 }
+
+.gradient-text {
+  background: linear-gradient(to right,#57007B,#F76680);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero-text {
+  background: linear-gradient(to right, #0D1C9F 0%,#DE4396 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

@@ -86,7 +86,7 @@ const Partners: React.FC = () => {
   };
 
   return (
-    <section className="p-8 md:p-16 bg-gray-50 ">
+    <section className="p-8 md:p-16">
         
         <div className="flex justify-between items-center mb-10 relative overflow-hidden">
         <div className="hidden sm:block absolute right-1/3 bottom-0 -translate-x-1/2 translate-y-1/2 w-24 h-12 lg:h-16 rounded-t-full bg-[linear-gradient(180deg,rgba(247,102,128,1),rgba(87,0,123,1))] shadow-lg"></div>
@@ -121,7 +121,7 @@ const Partners: React.FC = () => {
         </div>
 
         <div
-          className="mt-10 overflow-hidden"
+          className="mt-10 p-2 overflow-hidden bg-gray-100 rounded-3xl"
           onMouseEnter={handleMouseEnter}
           onMouseLeave={handleMouseLeave}
         >

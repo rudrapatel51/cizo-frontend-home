@@ -17,14 +17,14 @@ const DevelopSoftware: React.FC = () => {
               <span className="font-bold text-black"> to develop software</span>
             </h2>
             <p className="text-lg text-gray-600 mb-8 leading-normal max-w-lg tracking-wide">
-  We <span className="font-medium text-purple-600">add development capacity</span>{" "}
+  We <span className="font-medium gradient-text">add development capacity</span>{" "}
   to tech teams. Our value isn't limited to building teams but is
   equally distributed across the project lifecycle. We are a custom
   software development company that guarantees the successful
   delivery of your project.
 </p>
 
-            <div className="flex items-center text-purple-800">
+            <div className="flex items-center text-[#57007B]">
               <span className="font-medium mr-3">See more Informations</span>
               <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />

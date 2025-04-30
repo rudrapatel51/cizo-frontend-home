@@ -1,5 +1,12 @@
-import React, { useState } from 'react';
-import SectionTitle from "../sections/SectionTitle"
+import { useState, useRef } from 'react';
+import { FaQuoteLeft, FaQuoteRight, FaChevronLeft, FaChevronRight } from "react-icons/fa";
+
+const SectionTitle = ({ title, centered }:any) => (
+  <div className={`${centered ? 'text-center' : ''} mb-8`}>
+    <h2 className="text-3xl md:text-4xl font-bold text-gray-900">{title}</h2>
+    <div className={`h-1 w-16 bg-purple-600 mt-4 ${centered ? 'mx-auto' : ''}`}></div>
+  </div>
+);
 
 interface Testimonial {
   id: number;
@@ -11,14 +18,17 @@ interface Testimonial {
   active: boolean;
 }
 
-const Testimonials: React.FC = () => {
+const Testimonials = () => {
+  const [currentIndex, setCurrentIndex] = useState(2);
+  const testimonialContainerRef = useRef(null);
+  
   const [testimonials, setTestimonials] = useState<Testimonial[]>([
     {
       id: 1,
       name: "Romeena De Silva",
       role: "",
       company: "Janet Cosmetics",
-      text: "",
+      text: "Without any doubt I recommend Alcaline Solutions as one of the best web design and digital marketing agencies. One of the best agencies I've came across so far. Wouldn't be hesitated to introduce their work to someone else.",
       avatar: "https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-04-29/7t5244NwR6.png",
       active: false
     },
@@ -27,7 +37,7 @@ const Testimonials: React.FC = () => {
       name: "Romeena De Silva",
       role: "",
       company: "Janet Cosmetics",
-      text: "",
+      text: "Without any doubt I recommend Alcaline Solutions as one of the best web design and digital marketing agencies. One of the best agencies I've came across so far. Wouldn't be hesitated to introduce their work to someone else.",
       avatar: "https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-04-29/qxsxb8WbFU.png",
       active: false
     },
@@ -45,7 +55,7 @@ const Testimonials: React.FC = () => {
       name: "Romeena De Silva",
       role: "",
       company: "Janet Cosmetics",
-      text: "",
+      text: "Without any doubt I recommend Alcaline Solutions as one of the best web design and digital marketing agencies. One of the best agencies I've came across so far. Wouldn't be hesitated to introduce their work to someone else.",
       avatar: "https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-04-29/pn2qC0EEnD.png",
       active: false
     },
@@ -54,62 +64,87 @@ const Testimonials: React.FC = () => {
       name: "Romeena De Silva",
       role: "",
       company: "Janet Cosmetics",
-      text: "",
+      text: "Without any doubt I recommend Alcaline Solutions as one of the best web design and digital marketing agencies. One of the best agencies I've came across so far. Wouldn't be hesitated to introduce their work to someone else.",
       avatar: "https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-04-29/nu9D4vezoM.png",
       active: false
     }
   ]);
 
-  const setActiveTestimonial = (id: number) => {
+  const setActiveTestimonial = (index: number) => {
+    setCurrentIndex(index);
     setTestimonials(
-      testimonials.map(testimonial => ({
+      testimonials.map((testimonial, idx) => ({
         ...testimonial,
-        active: testimonial.id === id
+        active: idx === index
       }))
     );
   };
 
-  const activeTestimonial = testimonials.find(t => t.active);
+  const handleNext = () => {
+    const nextIndex = (currentIndex + 1) % testimonials.length;
+    setActiveTestimonial(nextIndex);
+  };
+
+  const handlePrev = () => {
+    const prevIndex = (currentIndex - 1 + testimonials.length) % testimonials.length;
+    setActiveTestimonial(prevIndex);
+  };
+
+  const activeTestimonial = testimonials[currentIndex];
 
   return (
-    <section className="py-16">
+    <section className="py-16 lg:pb-36">
       <div className="container mx-auto px-4">
         <SectionTitle 
-          title={<>Why customers love<br />working with us</>} 
+          title={<><span className='font-normal'>Why customers love</span><br />working with us</>} 
           centered 
         />
         
         <div className="mt-12 max-w-3xl mx-auto relative">
-          <div className="absolute left-0 top-0">
-            <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M12.5 25H5V17.5H12.5V25ZM27.5 25H20V17.5H27.5V25Z" fill="#E2E8F0"/>
-              <path d="M12.5 25H5V17.5H12.5V25ZM27.5 25H20V17.5H27.5V25Z" stroke="#718096" strokeWidth="2"/>
-            </svg>
+          <div className="absolute left-0 top-0 text-purple-600 text-2xl">
+            <FaQuoteLeft/>
           </div>
           
           <div className="text-center px-10 md:px-20 py-8">
-            <p className="text-lg text-gray-600 leading-relaxed">
-              {activeTestimonial?.text || "Without any doubt I recommend Alcaline Solutions as one of the best web design and digital marketing agencies. One of the best agencies I've came across so far. Wouldn't be hesitated to introduce their work to someone else."}
+            <p className="text-lg text-[#718096] leading-loose font-normal">
+              {activeTestimonial.text || "Without any doubt I recommend Alcaline Solutions as one of the best web design and digital marketing agencies. One of the best agencies I've came across so far. Wouldn't be hesitated to introduce their work to someone else."}
             </p>
           </div>
           
-          <div className="absolute right-0 bottom-0">
-            <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M12.5 25H5V17.5H12.5V25ZM27.5 25H20V17.5H27.5V25Z" fill="#E2E8F0"/>
-              <path d="M12.5 25H5V17.5H12.5V25ZM27.5 25H20V17.5H27.5V25Z" stroke="#718096" strokeWidth="2"/>
-            </svg>
+          <div className="absolute right-0 bottom-0 text-purple-600 text-2xl">
+            <FaQuoteRight />
           </div>
         </div>
         
-        <div className="mt-12 flex flex-wrap justify-center gap-6 md:gap-10">
-          {testimonials.map(testimonial => (
+        {/* Navigation buttons */}
+        <div className="flex justify-between items-center max-w-7xl mx-auto mt-4">
+          <button 
+            onClick={handlePrev} 
+            className="w-12 h-12 rounded-full flex items-center justify-center border-3 border-purple-600 text-purple-500 hover:bg-purple-600 hover:text-white hover:border-purple-600 transition-colors"
+            aria-label="Previous testimonial"
+          >
+            <FaChevronLeft className="w-4 h-4" />
+          </button>
+          
+          <button 
+            onClick={handleNext} 
+            className="w-12 h-12 rounded-full flex items-center justify-center border-3 border-purple-600 text-purple-500 hover:bg-purple-600 hover:text-white hover:border-purple-600 transition-colors"
+            aria-label="Next testimonial"
+          >
+            <FaChevronRight className="w-4 h-4" />
+          </button>
+        </div>
+        
+        {/* Testimonial avatars */}
+        <div className="mt-12 flex flex-wrap justify-center gap-6 md:gap-10" ref={testimonialContainerRef}>
+          {testimonials.map((testimonial, index) => (
             <div 
               key={testimonial.id}
-              className={`flex flex-col items-center cursor-pointer transition-all duration-300 ${testimonial.active ? 'scale-110' : 'opacity-70 hover:opacity-100'}`}
-              onClick={() => setActiveTestimonial(testimonial.id)}
+              className={`flex flex-col items-center cursor-pointer transition-all duration-300 ${index === currentIndex ? 'scale-110' : 'opacity-70 hover:opacity-100'}`}
+              onClick={() => setActiveTestimonial(index)}
             >
               <div 
-                className={`w-16 h-16 md:w-20 md:h-20 rounded-full bg-cover bg-center mb-4 ${testimonial.active ? 'ring-4 ring-purple-600' : ''}`}
+                className={`w-16 h-16 md:w-20 md:h-20 rounded-full bg-cover bg-center mb-4 ${index === currentIndex ? 'ring-4 ring-purple-600' : ''}`}
                 style={{ backgroundImage: `url(${testimonial.avatar})` }}
               ></div>
               
@@ -122,10 +157,10 @@ const Testimonials: React.FC = () => {
               </div>
               
               <div className="text-center">
-                <h4 className={`font-semibold ${testimonial.active ? 'text-purple-800 text-lg' : 'text-gray-400 text-base'}`}>
+                <h4 className={`font-semibold ${index === currentIndex ? 'text-purple-800 text-lg' : 'text-gray-400 text-base'}`}>
                   {testimonial.name}
                 </h4>
-                <p className={`text-sm ${testimonial.active ? 'text-black' : 'text-gray-300'}`}>
+                <p className={`text-sm ${index === currentIndex ? 'text-black' : 'text-gray-400'}`}>
                   {testimonial.role || testimonial.company}
                 </p>
               </div>

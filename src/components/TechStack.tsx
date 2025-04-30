@@ -39,10 +39,10 @@ const TechStack: React.FC = () => {
   ];
 
   return (
-    <section className="py-16">
+    <section className="px-6 md:px-16">
       <div className="container mx-auto px-4">
         <SectionTitle 
-          title={<>Our<br />Tech Stack</>} 
+          title={<><span className='font-normal'>Our</span><br />Tech Stack</>} 
           centered 
         />
         
@@ -52,7 +52,7 @@ const TechStack: React.FC = () => {
               key={category.id}
               className={`text-lg font-medium relative px-2 py-1 ${
                 category.active 
-                  ? 'text-gray-900 font-semibold' 
+                  ? 'gradient-text font-semibold' 
                   : 'text-gray-600 hover:text-gray-800'
               }`}
               onClick={() => setActiveCategory(category.id)}

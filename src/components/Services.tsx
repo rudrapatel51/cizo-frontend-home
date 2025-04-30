@@ -80,7 +80,7 @@ const ServicesSlider = () => {
                     </div>
                   </div>
                   <h3 className={`text-left text-xl font-semibold mb-3 hover:text-purple-600 ${
-                    isActive ? "text-purple-500" : ""
+                    isActive ? "gradient-text" : ""
                   }`}>
                     {service.title}
                   </h3>

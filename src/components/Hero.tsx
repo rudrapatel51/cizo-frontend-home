@@ -5,7 +5,7 @@ const Hero = () => {
         <div className="flex flex-col md:flex-row items-center">
         <div className="text-center md:text-left md:w-1/2 mb-10 md:mb-12">
   <h1 className="text-4xl md:text-5xl font-normal text-gray-800 mb-10">
-    Great <span className="text-purple-500 font-bold">Product</span>{" "}is
+    Great <span className="hero-text font-bold">Product</span>{" "}is
     <br />
     <span className="text-black font-bold">built by great</span>{" "}
     <span className="text-purple-500 font-bold">teams</span>
