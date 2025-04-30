@@ -1,33 +1,5 @@
 import { useState, useEffect, useRef } from "react";
-import { Code, Smartphone, TestTube, TerminalSquare } from "lucide-react";
-
-const services = [
-  {
-    icon: <Smartphone className="h-8 w-8 text-purple-600" />,
-    title: "Mobile App Development",
-    description: "A Website is an extension of yourself and we can help you to express it properly. Your website is your number one marketing asset because we live in a digital age."
-  },
-  {
-    icon: <Code className="h-8 w-8 text-purple-600" />, 
-    title: "Web Design & Development",
-    description: "A Website is an extension of yourself and we can help you to express it properly. Your website is your number one marketing asset because we live in a digital age."
-  },
-  {
-    icon: <TestTube className="h-8 w-8 text-purple-600" />,
-    title: "Software Testing Service",
-    description: "A Website is an extension of yourself and we can help you to express it properly. Your website is your number one marketing asset because we live in a digital age."
-  },
-  {
-    icon: <TerminalSquare className="h-8 w-8 text-purple-600" />,
-    title: "Software Tech",
-    description: "A Website is an extension of yourself and we can help you to express it properly. Your website is your number one marketing asset because we live in a digital age."
-  },
-  {
-    icon: <Code className="h-8 w-8 text-purple-600" />,
-    title: "Web Development",
-    description: "A Website is an extension of yourself and we can help you to express it properly. Your website is your number one marketing asset because we live in a digital age."
-  },
-];
+import { services } from "../utils/Data";
 
 const ServicesSlider = () => {
   const [activeSlide, setActiveSlide] = useState(0); // 0-based indexing

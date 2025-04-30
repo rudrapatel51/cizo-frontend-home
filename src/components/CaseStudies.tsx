@@ -1,40 +1,10 @@
 import React from 'react';
 import SectionTitle from '../sections/SectionTitle';
 import { IoIosArrowForward } from "react-icons/io";
+import { caseStudies } from '../utils/Data';
 
-
-interface CaseStudy {
-  id: number;
-  title: string;
-  description: string;
-  image: string;
-  bgColor: string;
-}
 
 const CaseStudies: React.FC = () => {
-  const caseStudies: CaseStudy[] = [
-    {
-      id: 1,
-      title: "Website Design for SCFC Canada",
-      description: "Born out of a vision, a single-minded objective that puts service before anything else, Swift Clearance and Forwarding Corp. surging forth to deliver the best services in the shipping and logistics scenario. Its meteoric rise stems out of a solid foundation.",
-      image: "https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-04-29/18fac10c-e45a-492b-9840-d753da9f6fb7.png",
-      bgColor: "#f1f1ff"
-    },
-    {
-      id: 2,
-      title: "Website Design for SCFC Canada",
-      description: "Born out of a vision, a single-minded objective that puts service before anything else, Swift Clearance and Forwarding Corp. surging forth to deliver the best services in the shipping and logistics scenario. Its meteoric rise stems out of a solid foundation.",
-      image: "https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-04-29/71d1f438-3386-401a-81b2-0dd5de74a51e.png",
-      bgColor: "#f0fff7"
-    },
-    {
-      id: 3,
-      title: "Website Design for SCFC Canada",
-      description: "Born out of a vision, a single-minded objective that puts service before anything else, Swift Clearance and Forwarding Corp. surging forth to deliver the best services in the shipping and logistics scenario. Its meteoric rise stems out of a solid foundation.",
-      image: "https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-04-29/eeef1161-aa0d-4fa9-84e6-84b3c9d644b2.png",
-      bgColor: "#fff4f4"
-    }
-  ];
 
   return (
     <section id="case-studies" className="py-16 bg-gray-100 relative">

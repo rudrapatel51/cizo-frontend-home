@@ -1,47 +1,10 @@
 import React, { useState, useEffect } from 'react';
-
-interface Partner {
-  id: number;
-  logo: string;
-  width: string;
-}
+import { partners } from '../utils/Data';
 
 const Partners: React.FC = () => {
   const [activeIndex, setActiveIndex] = useState<number>(0);
   const [isAutoplay, setIsAutoplay] = useState<boolean>(true);
 
-  const partners: Partner[] = [
-    {
-      id: 1,
-      logo: "/home/partners/1.png",
-      width: "w-24"
-    },
-    {
-      id: 2,
-      logo: "/home/partners/2.png",
-      width: "w-24"
-    },
-    {
-      id: 3,
-      logo: "/home/partners/3.png",
-      width: "w-24"
-    },
-    {
-      id: 4,
-      logo: "/home/partners/4.png",
-      width: "w-24"
-    },
-    {
-      id: 5,
-      logo: "/home/partners/5.png",
-      width: "w-24"
-    },
-    {
-      id: 6,
-      logo: "/home/partners/6.png",
-      width: "w-24"
-    }
-  ];
 
   const totalSlidesVisible = (): number => {
     if (typeof window !== 'undefined') {

@@ -1,5 +1,6 @@
 import { useState, useRef } from 'react';
 import { FaQuoteLeft, FaQuoteRight, FaChevronLeft, FaChevronRight } from "react-icons/fa";
+import { testimonials as testimonialData, Testimonial } from  "../utils/Data"
 
 const SectionTitle = ({ title, centered }:any) => (
   <div className={`${centered ? 'text-center' : ''} mb-8`}>
@@ -8,67 +9,12 @@ const SectionTitle = ({ title, centered }:any) => (
   </div>
 );
 
-interface Testimonial {
-  id: number;
-  name: string;
-  role: string;
-  company: string;
-  text: string;
-  avatar: string;
-  active: boolean;
-}
 
 const Testimonials = () => {
   const [currentIndex, setCurrentIndex] = useState(2);
   const testimonialContainerRef = useRef(null);
   
-  const [testimonials, setTestimonials] = useState<Testimonial[]>([
-    {
-      id: 1,
-      name: "Romeena De Silva",
-      role: "",
-      company: "Janet Cosmetics",
-      text: "Without any doubt I recommend Alcaline Solutions as one of the best web design and digital marketing agencies. One of the best agencies I've came across so far. Wouldn't be hesitated to introduce their work to someone else.",
-      avatar: "https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-04-29/7t5244NwR6.png",
-      active: false
-    },
-    {
-      id: 2,
-      name: "Romeena De Silva",
-      role: "",
-      company: "Janet Cosmetics",
-      text: "Without any doubt I recommend Alcaline Solutions as one of the best web design and digital marketing agencies. One of the best agencies I've came across so far. Wouldn't be hesitated to introduce their work to someone else.",
-      avatar: "https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-04-29/qxsxb8WbFU.png",
-      active: false
-    },
-    {
-      id: 3,
-      name: "Imran Khan",
-      role: "Software Engineer",
-      company: "",
-      text: "Without any doubt I recommend Alcaline Solutions as one of the best web design and digital marketing agencies. One of the best agencies I've came across so far. Wouldn't be hesitated to introduce their work to someone else.",
-      avatar: "https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-04-29/7eGAmowbDp.png",
-      active: true
-    },
-    {
-      id: 4,
-      name: "Romeena De Silva",
-      role: "",
-      company: "Janet Cosmetics",
-      text: "Without any doubt I recommend Alcaline Solutions as one of the best web design and digital marketing agencies. One of the best agencies I've came across so far. Wouldn't be hesitated to introduce their work to someone else.",
-      avatar: "https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-04-29/pn2qC0EEnD.png",
-      active: false
-    },
-    {
-      id: 5,
-      name: "Romeena De Silva",
-      role: "",
-      company: "Janet Cosmetics",
-      text: "Without any doubt I recommend Alcaline Solutions as one of the best web design and digital marketing agencies. One of the best agencies I've came across so far. Wouldn't be hesitated to introduce their work to someone else.",
-      avatar: "https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-04-29/nu9D4vezoM.png",
-      active: false
-    }
-  ]);
+  const [testimonials, setTestimonials] = useState<Testimonial[]>(testimonialData);
 
   const setActiveTestimonial = (index: number) => {
     setCurrentIndex(index);

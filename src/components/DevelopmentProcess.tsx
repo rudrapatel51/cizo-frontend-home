@@ -1,55 +1,9 @@
 import React from 'react';
 import SectionTitle from '../sections/SectionTitle';
-
-interface ProcessStep {
-  id: number;
-  number: string;
-  title: string;
-  description: string;
-}
+import { bottomSteps, topSteps } from '../utils/Data';
 
 const DevelopmentProcess: React.FC = () => {
-  const topSteps: ProcessStep[] = [
-    {
-      id: 1,
-      number: "#1",
-      title: "Assemble the right team",
-      description: "We handle all aspects of vetting and choosing the right team that you don't have the time, expertise, or desire to do."
-    },
-    {
-      id: 3,
-      number: "#3",
-      title: "Tech architecture",
-      description: "We break monolithic apps into microservices. Decoupling the code allows teams to move faster and more independently"
-    },
-    {
-      id: 5,
-      number: "#5",
-      title: "Code reviews",
-      description: "Code reviews before release help detect issues like memory leaks, file leaks, performance signs, and general bad smells"
-    }
-  ];
 
-  const bottomSteps: ProcessStep[] = [
-    {
-      id: 2,
-      number: "#2",
-      title: "Sprint planning",
-      description: "Sprint roadmap is a collective planning effort. Team members collaborate to clarify items and ensure shared understanding."
-    },
-    {
-      id: 4,
-      number: "#4",
-      title: "Standups & weekly demos",
-      description: "Standups, weekly demos, and weekly reviews make sure everyone is on the same page and can raise their concerns."
-    },
-    {
-      id: 6,
-      number: "#6",
-      title: "Iterative delivery",
-      description: "We divide the implementation process into several checkpoints rather than a single deadline."
-    }
-  ];
   const Trophy = () => (
     <div className="absolute right-0 top-1/2 transform -translate-y-1/2 hidden lg:block">
       <div className="text-yellow-400 text-3xl">🏆</div>

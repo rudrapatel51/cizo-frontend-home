@@ -1,60 +1,9 @@
 import React from 'react';
 import SectionTitle from '../sections/SectionTitle';
-
-interface ProcessStep {
-  id: number;
-  title: string;
-  description: string;
-  image: string;
-  quote: string;
-  person: {
-    name: string;
-    role: string;
-    avatar: string;
-  };
-  reversed?: boolean;
-}
+import { steps } from '../utils/Data';
 
 const BuildingProcess: React.FC = () => {
-  const steps: ProcessStep[] = [
-    {
-      id: 1,
-      title: "Build the right team to scale",
-      description: "Finding the right talent is not easy. We help you find the talent that suits your needs, follows your processes, and sticks with you long term (not the case with freelancers",
-      image: "/home/section1.png",
-      quote: "\"Simform is quick to identify larger problem with the Software so we decided to expand our scope to build new modules\"",
-      person: {
-        name: "Jeewa markram",
-        role: "CEO",
-        avatar: "https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-04-29/R4Z2pOYXNb.png"
-      }
-    },
-    {
-      id: 2,
-      title: "Build the right team to scale",
-      description: "Finding the right talent is not easy. We help you find the talent that suits your needs, follows your processes, and sticks with you long term (not the case with freelancers",
-      image: "/home/section2.png",
-      quote: "\"Simform is quick to identify larger problem with the Software so we decided to expand our scope to build new modules\"",
-      person: {
-        name: "Jeewa markram",
-        role: "CEO",
-        avatar: "https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-04-29/cqDKmuC9Jx.png"
-      },
-      reversed: true
-    },
-    {
-      id: 3,
-      title: "Build the right team to scale",
-      description: "Finding the right talent is not easy. We help you find the talent that suits your needs, follows your processes, and sticks with you long term (not the case with freelancers",
-      image: "/home/section3.png",
-      quote: "\"Simform is quick to identify larger problem with the Software so we decided to expand our scope to build new modules\"",
-      person: {
-        name: "Jeewa markram",
-        role: "CEO",
-        avatar: "https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-04-29/dk31vUqiaw.png"
-      }
-    }
-  ];
+
 
   return (
     <section className="px-4 py-6 md:py-16 md:px-24">
@@ -100,7 +49,7 @@ const BuildingProcess: React.FC = () => {
               
               <div className="w-full md:w-1/2">
                   <img src={step.image}
-                    className="w-full h-64 md:h-96 rounded-lg bg-contain"
+                    className="w-full h-64 md:h-96 rounded-lg object-contain"
                   />
               </div>
             </div>

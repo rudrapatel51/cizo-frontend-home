@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import SectionTitle from '../sections/SectionTitle';
+import { techLogos } from '../utils/Data';
 
 interface TechCategory {
   id: string;
@@ -25,18 +26,6 @@ const TechStack: React.FC = () => {
       }))
     );
   };
-
-  const techLogos = [
-    "https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-04-29/9Dx5PrxACR.png",
-    "https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-04-29/KU1dzW0U54.png",
-    "https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-04-29/190a5e35-0e39-47a1-a82d-7949414fcc99.png",
-    "https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-04-29/4qYH3QXgbg.png",
-    "https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-04-29/S1jK1RruKx.png",
-    "https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-04-29/ekRmSNtu1V.png",
-    "https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-04-29/sCaGQN81s9.png",
-    "https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-04-29/hbD7zRRCqR.png",
-    "https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-04-29/18df4747-52da-4d5a-9b17-d4e81760dcac.png",
-  ];
 
   return (
     <section className="px-6 md:px-16">

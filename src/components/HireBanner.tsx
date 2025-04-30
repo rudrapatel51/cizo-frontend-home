@@ -2,13 +2,12 @@ import React from 'react';
 
 const HireBanner: React.FC = () => {
   return (
-    <section className="py-12">
-      <div className="container mx-auto px-4">
+    <section className="px-8 md:px-24 pb-8 md:pb-12">
         <div
-          className="rounded-2xl bg-cover bg-center py-12 px-6 md:px-12 relative overflow-hidden"
+          className="rounded-3xl bg-cover bg-center py-12 px-6 md:px-12 relative overflow-hidden"
           style={{ backgroundImage: 'url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-04-29/f1hQXk416k.png)' }}
         >
-          <div className="flex flex-col md:flex-row justify-between items-center">
+          <div className="flex flex-col md:flex-row justify-between items-center p-8">
             <div className="mb-8 md:mb-0 md:w-1/2">
               <h2 className="text-3xl md:text-4xl font-bold text-[#29272E] leading-tight mb-4">
                 Hire the best developers and designers around!
@@ -26,7 +25,6 @@ const HireBanner: React.FC = () => {
               </button>
             </div>
           </div>
-        </div>
       </div>
     </section>
   );
