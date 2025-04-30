@@ -39,9 +39,10 @@ const Header = () => {
         </nav>
 
         <div className="hidden md:block">
-          <button className="bg-purple-600 text-white px-4 py-2 rounded-md hover:bg-purple-700 transition-colors">
-           Contact Us
-          </button>
+        <button className="bg-gradient-to-r from-[#6675F7] to-[#57007B] text-white px-4 py-2 rounded-md hover:opacity-90 transition-opacity">
+  Contact Us
+</button>
+
         </div>
 
         {/* Mobile Menu Button */}
@@ -52,7 +53,7 @@ const Header = () => {
 
       {/* Mobile Navigation */}
       {isMenuOpen && (
-        <div className="md:hidden bg-white py-4 px-4 shadow-md">
+        <div className="md:hidden fixed w-full text-center bg-white py-4 px-4 shadow-md">
           <nav className="flex flex-col space-y-4">
             <a href="#" className="text-gray-600 hover:text-purple-600">
               About
@@ -67,10 +68,13 @@ const Header = () => {
               Blog
             </a>
             <a href="#" className="text-gray-600 hover:text-purple-600">
-              Contact
+              How it Works
             </a>
-            <button className="bg-purple-600 text-white px-4 py-2 rounded-md hover:bg-purple-700 transition-colors w-full">
-              Get Started
+            <a href="#" className="text-gray-600 hover:text-purple-600">
+            Hire
+            </a>
+            <button className="bg-gradient-to-r from-[#6675F7] to-[#57007B] text-white px-4 py-2 rounded-md hover:bg-purple-700 transition-colors w-full">
+              Contact Us
             </button>
           </nav>
         </div>
