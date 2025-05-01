@@ -5,13 +5,13 @@ const DevelopSoftware: React.FC = () => {
 <div className="absolute left-1/4 top-[-50px] -translate-x-1/2 translate-y-1/2 w-24 h-12 lg:h-16 rounded-t-full bg-[linear-gradient(180deg,rgba(247,102,128,1),rgba(87,0,123,1))] shadow-lg rotate-180">
 </div>
 
-    <section className="p-6 md:p-16">
+    <section className="p-6 md:p-16" >
 
 
         <div className="flex flex-col lg:flex-row items-center gap-10">
-          <div className="w-full lg:w-1/2">
+          <div className="w-full lg:w-1/2" data-aos="fade-up-right">
             <div className="w-16 h-1 bg-purple-600 mb-6"></div>
-            <h2 className="text-4xl font-normal mb-8 leading-tight">
+            <h2 className="text-4xl font-normal mb-8 leading-tight" >
               <span className="font-normal text-gray-800">Leading companies trust us</span>
               <br/>
               <span className="font-bold text-black"> to develop software</span>

@@ -32,7 +32,7 @@ const ServicesSlider = () => {
 
   return (
     <div className="py-16 bg-gray-50">
-      <h2 className="text-4xl font-bold text-center p-8">Services we offer</h2>
+      <h2 className="text-4xl font-bold text-center p-8" data-aos="zoom-in">Services we offer</h2>
       <div className="container mx-auto px-4">
         <div className="relative">
           <div ref={sliderRef} className="flex overflow-x-hidden pb-6 gap-6">

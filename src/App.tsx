@@ -12,14 +12,21 @@ import BuildingProcess from "./components/BuildingProcess";
 import DevelopmentProcess from "./components/DevelopmentProcess";
 import Resources from "./components/Resources";
 import HireBanner from "./components/HireBanner";
+import { useEffect } from "react";
+import AOS from 'aos';
+import 'aos/dist/aos.css'
 
 const App = () => {
+  useEffect(() => {
+    AOS.init({
+      duration: 1000, // animation duration in ms
+    });
+  }, []);
+
   return (
     <div className="font-sans">
       <Header />
-      <main className="p-6 lg:px-24">
         <Hero />
-      </main>
       <div>
         <Services />
         <DevelopSoftware />

@@ -55,7 +55,7 @@ const Partners: React.FC = () => {
         <div className="hidden sm:block absolute right-1/3 bottom-0 -translate-x-1/2 translate-y-1/2 w-24 h-12 lg:h-16 rounded-t-full bg-[linear-gradient(180deg,rgba(247,102,128,1),rgba(87,0,123,1))] shadow-lg"></div>
         <div className='flex flex-col gap-5  items-start'>
       <div className="w-16 h-1 bg-purple-600"></div>
-      <h2 className="text-3xl md:text-4xl font-meduim leading-relaxed">
+      <h2 className="text-3xl md:text-4xl font-meduim leading-relaxed" data-aos="fade-up-right">
       <span >Meet the People</span>
       <br/><span className=' font-bold'>We are Working With</span>
       </h2>
